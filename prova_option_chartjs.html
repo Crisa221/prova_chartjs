@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prova</title>
+    <script type="text/javascript" src="lib/chart_js/Chart.min.js"></script>
+    <script type="text/javascript" src="lib/chart_js/Chart.bundle.min.js"></script>
+</head>
+<body>
+
+<canvas id="myChart"></canvas>
+
+<br />
+<br />
+
+<canvas id="stoCazzo"></canvas>
+
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+            datasets: [{
+                label: 'apples',
+                data: [12, 19, 3, 17, 6, 3, 7],
+                backgroundColor: "rgba(153,255,51,0.4)"
+            }, {
+                label: 'oranges',
+                data: [2, 29, 5, 5, 2, 3, 10],
+                backgroundColor: "rgba(255,153,0,0.4)"
+            }]
+        }
+    });
+
+
+    var medda = document.getElementById('stoCazzo').getContext('2d');
+    var stoCazzo = new Chart(medda, {
+        type: 'line',
+        data: {
+            datasets: [{
+                label: 'Scatter Dataset',
+                data: [{
+                    x: 0,
+                    y: 10
+                }, {
+                    x: 10,
+                    y: 20
+                }, {
+                    x: 20,
+                    y: 30
+                }]
+            }]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    type: 'linear',
+                    position: 'bottom'
+                }]
+            }
+        }
+    });
+
+
+</script>
+
+</body>
+
+
+</html>
